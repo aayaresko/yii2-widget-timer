@@ -17,7 +17,7 @@ use yii\web\View;
  * Plugin явно зависит от библиотеки jQuery.
  *
  * @package aayaresko\timer
- * @author aayaresko aayaresko@gmail.com
+ * @author aayaresko <aayaresko@gmail.com>
  */
 class TimerAsset extends AssetBundle {
 

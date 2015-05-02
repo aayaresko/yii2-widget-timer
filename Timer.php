@@ -35,7 +35,7 @@ use yii\helpers\Json;
  *
  * @var $options array массив параметров, передаваемых скрипту
  * @package aayaresko\timer
- * @author aayaresko aayaresko@gmail.com
+ * @author aayaresko <aayaresko@gmail.com>
  */
 class Timer extends Widget{
 

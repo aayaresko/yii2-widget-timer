@@ -15,18 +15,36 @@ Simple timer widget for yii2-based applications
 Для установки выполните
 
 ```
-$ php composer.phar require aayaresko/yii2-widget-timer "*"
+$ php composer.phar require aayaresko/yii2-widget-timer "dev-master"
 ```
 
 или добавьте
 
 ```
-"aayaresko/yii2-widget-timer": "*"
+"aayaresko/yii2-widget-timer": "dev-master"
 ```
 
 в секцию ```require``` вашего `composer.json`.
 
 ## Использование
+
+выполнить загрузку необходимых компонентов и подготовить видже
+
+```php
+use aayaresko\timer\Timer
+Timer::widget([
+    'options' => [
+        'container' => '.timer',
+        'manual' => true,
+    ]
+])
+```
+
+Инициализировать plugin с автоматическим запуском счётчика (рабочий экземпляр plugin будет доступен в глобальной области видимости под именем $.fn.timer.worker)
+
+```php
+    $.fn.timer.worker.init(true);
+```
 
 Управление plugin осуществляется через методы:
 * container - селектор html элемента, в котором необходимо отобразить таймер (по умолчанию '.timer');
@@ -39,3 +57,6 @@ $ php composer.phar require aayaresko/yii2-widget-timer "*"
 * go() - запустит таймер;
 * stop(value) - остановит таймер сохранив текущие значение часов, минут, секунд (если value == false) или обнулит их (если value == true);
 * flush() - сбросит таймер, обнулив значения часов, минут, секунд.
+
+## License
+**yii2-widget-timer** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.

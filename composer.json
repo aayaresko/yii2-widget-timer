@@ -1,7 +1,7 @@
 {
     "name": "aayaresko/yii2-widget-timer",
-    "description": "Yii2 widget that displays controllable timer",
-    "keywords": ["yii2", "extension", "widget", "timer", "counter", "jquery", "plugin"],
+    "description": "Yii2 widget that displays controllable timer/stopwatch",
+    "keywords": ["yii2", "stopwatch", "timer", "timer counter", "counter", "widget", "extension", "jquery", "plugin"],
     "homepage": "https://github.com/aayaresko/yii2-widget-timer",
     "type": "yii2-extension",
     "license": "BSD 3-Clause License",

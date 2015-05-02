@@ -25,8 +25,7 @@
  * 4. flush() - сбросит таймер, обнулив значения часов, минут, секунд.
  *
  * @package aayaresko\timer
- * @author aayaresko
- * @email aayaresko@gmail.com
+ * @author aayaresko aayaresko@gmail.com
  */
 
 (function($) {

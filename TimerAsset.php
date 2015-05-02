@@ -17,12 +17,11 @@ use yii\web\View;
  * Plugin явно зависит от библиотеки jQuery.
  *
  * @package aayaresko\timer
- * @author aayaresko
- * @email aayaresko@gmail.com
+ * @author aayaresko aayaresko@gmail.com
  */
 class TimerAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/aayaresko/timer/assets';
+    public $sourcePath = '@vendor/aayaresko/yii2-widget-timer/assets';
 
     public $publishOptions = [
         'forceCopy' => true

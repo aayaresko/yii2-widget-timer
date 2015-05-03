@@ -13,7 +13,7 @@
  *
  * Конфигурация plugin осуществляется через параметры:
  * 1. container - селектор html элемента, в котором необходимо отобразить таймер (по умолчанию '.timer');
- * 2. manual - только инициализировать таймера (если false) или инициализировать с последующим автоматическим запуском (если false)
+ * 2. autoStart – запустить таймер сразу же после инициализации (по умолчанию - true);
  * 3. hours – начать счёт часов с этого значение (по умолчанию '00');
  * 4. minutes – начать счёт минут с этого значение (по умолчанию '00');
  * 5. seconds – начать счёт секунд с этого значение (по умолчанию '00');
@@ -37,7 +37,7 @@
                 'seconds': 0,
                 'minutes': 0,
                 'hours': 0,
-                'manual': false
+                'autoStart': true
             }, options),
 
             isRunning: false,
@@ -100,7 +100,7 @@
                     plugin.stop(true);
                 }
 
-                if(autoStart || !plugin.options.manual){
+                if(autoStart || plugin.options.autoStart){
                     plugin.go();
                 } else {
                     $(plugin.options.container).html(plugin.formatDate());

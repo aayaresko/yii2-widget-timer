@@ -139,10 +139,7 @@
             init: plugin.init,
             go: plugin.go,
             stop: plugin.stop,
-            flush: plugin.flush,
-            run: plugin.calculate,
-            getTime: plugin.getTime,
-            setTime: plugin.setTime
+            flush: plugin.flush
         };
     };
 })(jQuery);

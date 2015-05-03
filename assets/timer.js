@@ -43,7 +43,7 @@
             isRunning: false,
 
             getTime: function () {
-                plugin.options.seconds+=1;
+                plugin.options.seconds += 1;
                 plugin.calculate();
 
                 $(plugin.options.container).html(plugin.formatDate());

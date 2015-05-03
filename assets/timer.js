@@ -96,14 +96,15 @@
                 }
             },
             init: function(autoStart){
+
                 if(plugin.isRunning){
                     plugin.stop(true);
+                } else {
+                    $(plugin.options.container).html(plugin.formatDate());
                 }
 
                 if(autoStart || plugin.options.autoStart){
                     plugin.go();
-                } else {
-                    $(plugin.options.container).html(plugin.formatDate());
                 }
             },
             go: function(){

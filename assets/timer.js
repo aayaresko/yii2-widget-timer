@@ -17,6 +17,9 @@
  * 3. hours – начать счёт часов с этого значение (по умолчанию '00');
  * 4. minutes – начать счёт минут с этого значение (по умолчанию '00');
  * 5. seconds – начать счёт секунд с этого значение (по умолчанию '00');
+ * 6. animate - анимировать таймер при запусе (мигание);
+ * 7. animationSpeed - скорость анимации;
+ * 8. animationTimes - количество повторений;
  *
  * Управление plugin осуществляется через методы:
  * 1. init(value) - инициализирует таймер, оформит html-содержимое container в виде таймера (если value == false) или запустит таймер автоматически (если value == true),
@@ -37,6 +40,9 @@
                 'seconds': 0,
                 'minutes': 0,
                 'hours': 0,
+                'animate': true,
+                'animationSpeed': 200,
+                'animationTimes': 3,
                 'autoStart': true
             }, options),
 
@@ -113,6 +119,7 @@
                 } else {
                     plugin.isRunning = true;
                     plugin.run();
+                    plugin.animate(0);
                     console.log("Success! Timer started.");
                 }
             },
@@ -132,6 +139,21 @@
                         console.log("Success! Cycle interrupted.");
                     }
                 }, 1000);
+            },
+            animate: function(done){
+
+                if($(plugin.options.container).css("opacity") < 1){
+                    done += 1;
+                    $(plugin.options.container).animate({opacity:1}, plugin.options.animationSpeed);
+                } else {
+                    $(plugin.options.container).animate({opacity:0.1}, plugin.options.animationSpeed);
+                }
+
+                setTimeout(function(){
+                    if(done < plugin.options.animationTimes) {
+                        plugin.animate(done);
+                    }
+                }, plugin.options.animationSpeed);
             }
         };
 

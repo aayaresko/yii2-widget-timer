@@ -15,13 +15,13 @@ Simple timer widget for yii2-based applications
 Для установки выполните
 
 ```
-$ php composer.phar require aayaresko/yii2-widget-timer "dev-master"
+$ php composer.phar require aayaresko/yii2-widget-timer "*"
 ```
 
 или добавьте
 
 ```
-"aayaresko/yii2-widget-timer": "dev-master"
+"aayaresko/yii2-widget-timer": "*"
 ```
 
 в секцию ```require``` вашего `composer.json`.

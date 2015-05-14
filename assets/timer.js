@@ -61,7 +61,7 @@
             },
             flush: function (){
                 plugin.setTime(0,0,0);
-                plugin.isRunning = false;
+                //plugin.isRunning = false;
 
                 $(plugin.options.container).html(plugin.formatDate());
 

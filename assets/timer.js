@@ -17,9 +17,10 @@
  * 3. hours – начать счёт часов с этого значение (по умолчанию '00');
  * 4. minutes – начать счёт минут с этого значение (по умолчанию '00');
  * 5. seconds – начать счёт секунд с этого значение (по умолчанию '00');
- * 6. animate - анимировать таймер при запусе (мигание);
- * 7. animationSpeed - скорость анимации;
- * 8. animationTimes - количество повторений;
+ * 6. microseconds – начать счёт микро-секунд с этого значение (по умолчанию '0000');
+ * 7. animate - анимировать таймер при запусе (мигание);
+ * 8. animationSpeed - скорость анимации;
+ * 9. animationTimes - количество повторений;
  *
  * Управление plugin осуществляется через методы:
  * 1. init(value) - инициализирует таймер, оформит html-содержимое container в виде таймера (если value == false) или запустит таймер автоматически (если value == true),
@@ -37,6 +38,7 @@
         var plugin = {
             options: $.extend({
                 'container': ".timer",
+                'microseconds': 0,
                 'seconds': 0,
                 'minutes': 0,
                 'hours': 0,
@@ -47,45 +49,66 @@
             }, options),
 
             isRunning: false,
+            incrementValue: 0,
 
             getTime: function () {
-                plugin.options.seconds += 1;
+                plugin.options.microseconds += 1;
                 plugin.calculate();
 
                 $(plugin.options.container).html(plugin.formatDate());
             },
-            setTime: function (seconds, minutes, hours) {
+            setTime: function (microseconds, seconds, minutes, hours) {
+                plugin.options.microseconds = microseconds;
                 plugin.options.seconds = seconds;
                 plugin.options.hours = minutes;
                 plugin.options.minutes = hours;
             },
             flush: function (){
-                plugin.setTime(0,0,0);
+                plugin.setTime(0,0,0,0);
                 
                 $(plugin.options.container).html(plugin.formatDate());
 
                 console.log("Success! Timer flushed.");
             },
             formatDate: function (){
+                var microseconds = plugin.options.microseconds;
                 var seconds = plugin.options.seconds;
                 var minutes = plugin.options.minutes;
                 var hours = plugin.options.hours;
 
-                if(plugin.options.hours < 10){
-                    hours = "0" + plugin.options.hours;
-                }
-
-                if(plugin.options.minutes < 10){
-                    minutes = "0" + plugin.options.minutes;
+                switch (plugin.options.microseconds){
+                    case plugin.options.microseconds < 10:
+                        microseconds = "000" + plugin.options.microseconds;
+                        break;
+                    case plugin.options.microseconds < 100:
+                        microseconds = "00" + plugin.options.microseconds;
+                        break;
+                    case plugin.options.microseconds < 1000:
+                        microseconds = "0" + plugin.options.microseconds;
+                        break;
                 }
 
                 if(plugin.options.seconds < 10){
                     seconds = "0" + plugin.options.seconds;
                 }
 
-                return hours + ":" + minutes + ":" + seconds;
+                if(plugin.options.minutes < 10){
+                    minutes = "0" + plugin.options.minutes;
+                }
+
+                if(plugin.options.hours < 10){
+                    hours = "0" + plugin.options.hours;
+                }
+
+                return hours + ":" + minutes + ":" + seconds + ":" + microseconds;
             },
             calculate: function () {
+
+                if(plugin.options.microseconds > 999) {
+                    plugin.options.seconds += 1;
+                    plugin.options.microseconds = 0;
+                }
+
                 if(plugin.options.seconds > 59) {
                     plugin.options.minutes += 1;
                     plugin.options.seconds = 0;
@@ -137,7 +160,7 @@
                     } else {
                         console.log("Success! Cycle interrupted.");
                     }
-                }, 1000);
+                }, 1);
             },
             animate: function(done){
 

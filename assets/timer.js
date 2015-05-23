@@ -28,8 +28,8 @@
  * 3. stop(value) - остановит таймер сохранив текущие значение часов, минут, секунд (если value == false) или обнулит их (если value == true);
  * 4. flush() - сбросит таймер, обнулив значения часов, минут, секунд.
  *
- * @package aayaresko\timer
- * @author aayaresko aayaresko@gmail.com
+ * @package yii2-widgets
+ * @author aayaresko <aayaresko@gmail.com>
  */
 
 (function($) {

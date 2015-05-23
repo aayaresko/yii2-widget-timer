@@ -4,6 +4,10 @@
  * User: aayaresko
  * Date: 28.04.15
  * Time: 11:50
+ * 
+ * @copyright Copyright &copy; Andrej Jaresko, disbalans.net, 2015
+ * @package yii2-widgets
+ * @subpackage yii2-widget-timer
  */
 
 namespace aayaresko\timer;
@@ -16,7 +20,7 @@ use yii\web\View;
  *
  * Plugin явно зависит от библиотеки jQuery.
  *
- * @package aayaresko\timer
+ * @package yii2-widgets
  * @author aayaresko <aayaresko@gmail.com>
  */
 class TimerAsset extends AssetBundle {

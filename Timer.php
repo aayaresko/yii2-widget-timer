@@ -4,6 +4,10 @@
  * User: aayaresko
  * Date: 28.04.15
  * Time: 11:45
+ * 
+ * @copyright Copyright &copy; Andrej Jaresko, disbalans.net, 2015
+ * @package yii2-widgets
+ * @subpackage yii2-widget-timer
  */
 
 namespace aayaresko\timer;
@@ -38,7 +42,7 @@ use yii\helpers\Json;
  * 4. flush() - сбросит таймер, обнулив значения часов, минут, секунд.
  *
  * @var $options array массив параметров, передаваемых скрипту
- * @package aayaresko\timer
+ * @package yii2-widget-timer
  * @author aayaresko <aayaresko@gmail.com>
  */
 class Timer extends Widget{

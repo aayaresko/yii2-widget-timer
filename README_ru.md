@@ -1,7 +1,7 @@
 # yii2-widget-timer
-Simple timer widget for yii2-based applications
+Простой widget для отображения таймера в приложениях работающих на yii2
 
-## Widget timer on jquery plugin.
+## Widget timer jquery plugin.
 
 Отображает время, прошедшее со старта timer в формате ЧЧ:ММ:СС где:
 * ЧЧ - кол-во прошедших с момента запуска часов;
@@ -66,4 +66,4 @@ Timer::widget([
 * flush() - сбросит таймер, обнулив значения часов, минут, секунд.
 
 ## License
-**yii2-widget-timer** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-widget-timer** выпущен и распространяется согласно лицензией BSD 3-Clause. Подробнеес смотри `LICENSE.md`.

@@ -51,10 +51,10 @@ Plugin configuration:
 * animationTimes - number of blinking;
 
 Plugin control:
-* init(value) - initialize the timer, only displays the timer (value == false) or run timer automatically (value == true), if timer если таймер был ранее запущен автоматически остановит таймер и обнулит значения часов, минут, сукунд;
-* go() - запустит таймер;
-* stop(value) - остановит таймер сохранив текущие значение часов, минут, секунд (если value == false) или обнулит их (если value == true);
-* flush() - сбросит таймер, обнулив значения часов, минут, секунд.
+* init(value) - initialize the timer, only displays the timer (value == false) or run timer automatically (value == true), if timer is already running this actions will stop the timer and reset all of its counters (hours, minutes, seconds);
+* go() - run the timer;
+* stop(value) - stop the timer and keep counters (hours, minutes, seconds) (value == false) or reset them (value == true);
+* flush() - reset the timer counters (hours, minutes, seconds).
 
 ## License
 **yii2-widget-timer** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.

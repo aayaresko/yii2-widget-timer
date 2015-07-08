@@ -2,31 +2,27 @@
 Simple timer widget for yii2-based applications
 
 ## Widget timer on jquery plugin.
+Displays time elapsed since timer started in format HH:MM:SS:
+* HH - elapsed hours;
+* ММ - elapsed minutes;
+* CC - elapsed seconds;
+It can run automatically (after page is load) or manually. It is possible to stop and reset the timer.
 
-Отображает время, прошедшее со старта timer в формате ЧЧ:ММ:СС где:
-* ЧЧ - кол-во прошедших с момента запуска часов;
-* ММ - кол-во прошедших с момента запуска минут;
-* CC - кол-во прошедших с момента запуска секунд;
-Может быть запущен автоматически и вручную, может быть остановлен, сброшен
+## Installation
+The preferred way to install extension is via [composer](http://getcomposer.org/download/). Check the [composer.json](https://github.com/aayaresko/yii2-widget-timer/blob/master/composer.json) for this extension's requirements and dependencies.
 
-## Установка
-
-Предпочтительный способ установки через [composer](http://getcomposer.org/download/). Ознакомьтесь с требовния расширения и его зависимостями в [composer.json](https://github.com/aayaresko/yii2-widget-timer/blob/master/composer.json).
-
-Для установки выполните
+To install, either run
 ```
 $ php composer.phar require aayaresko/yii2-widget-timer "*"
 ```
-или добавьте
+or add
 ```
 "aayaresko/yii2-widget-timer": "*"
 ```
-в секцию ```require``` вашего `composer.json`.
+to the ```require``` section of your `composer.json`.
 
-## Использование
-
-Выполнить загрузку необходимых компонентов и подготовить виджет
-
+## Usage
+Upload all necessary components and prepare widget
 ```php
 use aayaresko\timer\Timer
 Timer::widget([
@@ -36,28 +32,26 @@ Timer::widget([
     ]
 ])
 ```
+Working copy of plugin will be in global scope and can be controlled via $.fn.timer.worker.
+Timer will run automatically after initialization (if 'autoStart' parameter is specified) and assigned to a container with class 'timer' ('container' property).
 
-Рабочий экземпляр plugin будет доступен в глобальной области видимости под именем $.fn.timer.worker.
-Счётчик будет запущен автоматически после инициализации (параметр 'autoStart') и отобразится в блоке с классом 'timer' (параметр 'container').
-
-Запустить счётчик
-
+Run the timer
 ```php
     $.fn.timer.worker.go();
 ```
 
-Конфигурация plugin осуществляется через параметры:
-* container - селектор html элемента, в котором необходимо отобразить таймер (по умолчанию '.timer');
-* autoStart – запустить таймер сразу же после инициализации (по умолчанию - true);
-* hours – начать счёт часов с этого значение (по умолчанию '00');
-* minutes – начать счёт минут с этого значение (по умолчанию '00');
-* seconds – начать счёт секунд с этого значение (по умолчанию '00');
-* animate - анимировать таймер при запусе (мигание);
-* animationSpeed - скорость анимации;
-* animationTimes - количество повторений;
+Plugin configuration:
+* container - html selector of timer container element (default - '.timer');
+* autoStart – whether to start timer automatically after initialization (default - true);
+* hours – start hours count from this value (default '00');
+* minutes – start minutes count from this value (default '00');
+* seconds – start seconds count from this value (default '00');
+* animate - whether to run animation when timer starts (blinking);
+* animationSpeed - speed of animation;
+* animationTimes - number of blinking;
 
-Управление plugin осуществляется через методы:
-* init(value) - инициализирует таймер, оформит html-содержимое container в виде таймера (если value == false) или запустит таймер автоматически (если value == true), при этом, если таймер был ранее запущен автоматически остановит таймер и обнулит значения часов, минут, сукунд;
+Plugin control:
+* init(value) - initialize the timer, only displays the timer (value == false) or run timer automatically (value == true), if timer если таймер был ранее запущен автоматически остановит таймер и обнулит значения часов, минут, сукунд;
 * go() - запустит таймер;
 * stop(value) - остановит таймер сохранив текущие значение часов, минут, секунд (если value == false) или обнулит их (если value == true);
 * flush() - сбросит таймер, обнулив значения часов, минут, секунд.

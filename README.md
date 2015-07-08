@@ -12,18 +12,15 @@ Simple timer widget for yii2-based applications
 ## Установка
 
 Предпочтительный способ установки через [composer](http://getcomposer.org/download/). Ознакомьтесь с требовния расширения и его зависимостями в [composer.json](https://github.com/aayaresko/yii2-widget-timer/blob/master/composer.json).
-Для установки выполните
 
+Для установки выполните
 ```
 $ php composer.phar require aayaresko/yii2-widget-timer "*"
 ```
-
 или добавьте
-
 ```
 "aayaresko/yii2-widget-timer": "*"
 ```
-
 в секцию ```require``` вашего `composer.json`.
 
 ## Использование

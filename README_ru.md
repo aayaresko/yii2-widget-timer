@@ -1,34 +1,32 @@
 # yii2-widget-timer
-Simple timer widget for yii2-based applications
+Простой widget для отображения таймера в приложениях работающих на yii2
 
-## Widget timer on jquery plugin.
+## Widget отображающий таймер (на основе jquery plugin).
 
 Отображает время, прошедшее со старта timer в формате ЧЧ:ММ:СС где:
 * ЧЧ - кол-во прошедших с момента запуска часов;
 * ММ - кол-во прошедших с момента запуска минут;
 * CC - кол-во прошедших с момента запуска секунд;
+
 Может быть запущен автоматически и вручную, может быть остановлен, сброшен
 
 ## Установка
 
 Предпочтительный способ установки через [composer](http://getcomposer.org/download/). Ознакомьтесь с требовния расширения и его зависимостями в [composer.json](https://github.com/aayaresko/yii2-widget-timer/blob/master/composer.json).
-Для установки выполните
 
+Для установки выполните
 ```
 $ php composer.phar require aayaresko/yii2-widget-timer "*"
 ```
-
 или добавьте
-
 ```
 "aayaresko/yii2-widget-timer": "*"
 ```
-
 в секцию ```require``` вашего `composer.json`.
 
 ## Использование
 
-Выполнить загрузку необходимых компонентов и подготовить виджет
+Выполнить загрузку необходимых компонентов и подготовить widget
 
 ```php
 use aayaresko\timer\Timer
@@ -66,4 +64,4 @@ Timer::widget([
 * flush() - сбросит таймер, обнулив значения часов, минут, секунд.
 
 ## License
-**yii2-widget-timer** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-widget-timer** выпущен и распространяется согласно лицензией BSD 3-Clause. Подробнеес смотри `LICENSE.md`.

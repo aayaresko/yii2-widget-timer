@@ -32,6 +32,11 @@ Timer::widget([
     ]
 ])
 ```
+Add an html tag with class name 'timer' in any place of your html.
+Content of this tag will be replaced by widget.
+```php
+<div class="timer"></div>
+```
 Working copy of plugin will be in global scope and can be controlled via $.fn.timer.worker.
 Timer will run automatically after initialization (if 'autoStart' parameter is specified) and assigned to a container with class 'timer' ('container' property).
 

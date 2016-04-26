@@ -60,6 +60,7 @@ Plugin control:
 * go() - run the timer;
 * stop(value) - stop the timer and keep counters (hours, minutes, seconds) (value == false) or reset them (value == true);
 * flush() - reset the timer counters (hours, minutes, seconds).
+* timeAsString() - return the current time values as string.
 
 ## License
 **yii2-widget-timer** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.

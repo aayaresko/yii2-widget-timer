@@ -4,7 +4,7 @@
     "keywords": ["yii2", "stopwatch", "timer", "counter", "widget", "extension", "jquery", "plugin"],
     "homepage": "https://github.com/aayaresko/yii2-widget-timer",
     "type": "yii2-extension",
-    "license": "BSD 3-Clause License",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "aayaresko",
